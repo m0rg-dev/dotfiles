@@ -63,6 +63,7 @@ There are two things you can do about this warning:
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(hl-paren-colors (quote ("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900")))
+ '(inhibit-startup-screen t)
  '(mac-option-modifier (quote (:ordinary meta :function alt :mouse alt)))
  '(magit-diff-use-overlays nil)
  '(markdown-fontify-code-blocks-natively t)
