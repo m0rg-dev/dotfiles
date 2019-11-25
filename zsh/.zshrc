@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='emacs'
 
+test -f ~/.zshrc_local && source ~/.zshrc_local
+
 #autoload -U compinit promptinit
 #compinit
 #promptinit; prompt gentoo
