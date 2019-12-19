@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='emacs'
-
+unsetopt share_history
 test -f ~/.zshrc_local && source ~/.zshrc_local
 
 #autoload -U compinit promptinit
