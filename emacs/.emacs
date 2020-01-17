@@ -1,5 +1,4 @@
 (tool-bar-mode -1)
-(menu-bar-mode -1)
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -38,6 +37,8 @@ There are two things you can do about this warning:
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+ '(display-line-numbers t)
+ '(display-line-numbers-widen t)
  '(fci-rule-color "#073642")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -63,16 +64,15 @@ There are two things you can do about this warning:
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(hl-paren-colors (quote ("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900")))
- '(inhibit-startup-screen t)
- '(mac-option-modifier (quote (:ordinary meta :function alt :mouse alt)))
  '(magit-diff-use-overlays nil)
  '(markdown-fontify-code-blocks-natively t)
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(ns-alternate-modifier (quote (:ordinary meta :function alt :mouse alt)))
  '(package-selected-packages
    (quote
-    (markdown-mode yafolding org-plus-contrib slack dockerfile-mode docker-compose-mode yaml-mode solarized-theme powerline)))
+    (terraform-mode go-mode nasm-mode markdown-mode yafolding org-plus-contrib slack dockerfile-mode docker-compose-mode yaml-mode solarized-theme powerline)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(powerline-display-hud nil)
@@ -83,7 +83,7 @@ There are two things you can do about this warning:
  '(term-default-fg-color "#839496")
  '(tramp-shell-prompt-pattern
    "\\(?:^\\|\\)[^]#$%>
-]*#?[]#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*")
+]*#?[]#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*")
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
@@ -119,7 +119,7 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#93a1a1" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width semi-condensed :foundry "PfEd" :family "Monoid"))))
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#93a1a1" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width semi-condensed :foundry "nil" :family "JetBrains Mono"))))
  '(bold ((t (:weight bold))))
  '(cperl-array-face ((t (:foreground "#268bd2" :slant italic))))
  '(cperl-hash-face ((t (:foreground "#dc322f" :slant italic))))
@@ -129,15 +129,17 @@ There are two things you can do about this warning:
  '(escape-glyph ((t (:foreground "#2aa198"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(font-lock-builtin-face ((t (:foreground "#268bd2" :slant normal :weight semi-bold))))
- '(font-lock-comment-face ((t (:foreground "#dc322f"))))
+ '(font-lock-comment-face ((t (:foreground "#dc322f" :slant italic))))
  '(font-lock-constant-face ((t (:foreground "#c33682"))))
  '(font-lock-function-name-face ((t (:foreground "#6c71c4" :weight bold))))
  '(font-lock-keyword-face ((t (:foreground "#2aa198" :weight normal))))
  '(font-lock-string-face ((t (:background "#073642" :foreground "#cb4b16"))))
  '(font-lock-type-face ((t (:foreground "#859900"))))
- '(font-lock-variable-name-face ((t (:foreground "#b58900"))))
+ '(font-lock-variable-name-face ((t (:foreground "#b58900" :slant italic))))
  '(fringe ((t (:background "#073642"))))
  '(isearch ((t (:background "#d33682" :foreground "#eee8d5"))))
+ '(line-number ((t (:inherit default :background "#073642"))))
+ '(line-number-current-line ((t (:inherit line-number :foreground "#eee8d5" :weight bold))))
  '(link ((t (:foreground "#2aa198" :underline t))))
  '(link-visited ((t (:inherit link :foreground "#6c71c4"))))
  '(minibuffer-prompt ((t (:foreground "#2aa198"))))
@@ -166,6 +168,7 @@ There are two things you can do about this warning:
 
 
 
+;(mac-auto-operator-composition-mode)
 (powerline-default-theme)
 (winner-mode)
 
@@ -217,3 +220,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (put 'downcase-region 'disabled nil)
+(setq mac-option-key-is-meta t)
+(setq mac-command-key-is-meta nil)
+(setq mac-command-modifier nil)
+(setq mac-option-modifier 'meta)
