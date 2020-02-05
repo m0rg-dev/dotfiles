@@ -33,5 +33,9 @@
     "editor.fontSize": 14,
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
-    "editor.lineHeight": 16
+    "editor.lineHeight": 16,
+    "editor.cursorStyle": "underline",
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#839496"
+    }
 }
