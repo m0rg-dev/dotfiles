@@ -32,5 +32,6 @@
     "editor.minimap.enabled": true,
     "editor.fontSize": 14,
     "window.zoomLevel": 0,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.lineHeight": 16
 }
