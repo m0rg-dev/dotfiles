@@ -1,0 +1,34 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.tokenColorCustomizations": {
+        "comments": "#dc322f",
+        "functions": {
+            "foreground": "#6c71c4",
+            "fontStyle": "bold",
+        },
+        "variables": {
+            "foreground": "#b58900",
+            "fontStyle": "italic",
+        },
+        "keywords": {
+            "foreground": "#2aa198",
+            "fontStyle": "bold",
+        },
+        "strings": {
+            "foreground": "#cb4b16"
+        },
+        // because apparently perl variables aren't "variables"
+        "textMateRules": [
+            {
+                "scope": "variable.other",
+                "settings": {
+                    "foreground": "#b58900",
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.minimap.enabled": true,
+    "editor.fontSize": 14
+}
