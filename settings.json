@@ -37,5 +37,7 @@
     "editor.cursorStyle": "underline",
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#839496"
-    }
+    },
+    "editor.detectIndentation": false,
+    "git.autofetch": true
 }
