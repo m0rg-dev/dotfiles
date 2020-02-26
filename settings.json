@@ -1,14 +1,17 @@
 {
     "workbench.colorTheme": "Solarized Dark",
     "editor.tokenColorCustomizations": {
-        "comments": "#dc322f",
+        "comments": {
+            // "foreground": "#dc322f",
+            "fontStyle": ""
+        },
         "functions": {
             "foreground": "#6c71c4",
             "fontStyle": "bold",
         },
         "variables": {
             "foreground": "#b58900",
-            "fontStyle": "italic",
+            // "fontStyle": "italic",
         },
         "keywords": {
             "foreground": "#2aa198",
@@ -23,21 +26,23 @@
                 "scope": "variable.other",
                 "settings": {
                     "foreground": "#b58900",
-                    "fontStyle": "italic"
+                    // "fontStyle": "italic"
                 }
             }
         ]
     },
-    "editor.fontFamily": "'JetBrains Mono'",
-    "editor.minimap.enabled": true,
-    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fixedsys Excelsior'",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
     "window.zoomLevel": 0,
-    "editor.wordWrap": "on",
     "editor.lineHeight": 16,
     "editor.cursorStyle": "underline",
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#839496"
     },
     "editor.detectIndentation": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "none"
 }
