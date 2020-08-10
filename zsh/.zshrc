@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gentoo"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,6 +75,9 @@ COMPLETION_WAITING_DOTS="false"
 plugins=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
+fpath+=$HOME/.pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # User configuration
 
@@ -109,3 +112,5 @@ test -f ~/.zshrc_local && source ~/.zshrc_local
 #autoload -U compinit promptinit
 #compinit
 #promptinit; prompt gentoo
+
+
