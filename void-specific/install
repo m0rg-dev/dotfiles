@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd $(dirname $0)
+
+mkdir -pv ~/.zshrc.d
+ln -sfv $(realpath 01-environment.sh) ~/.zshrc.d/
