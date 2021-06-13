@@ -114,3 +114,6 @@ test -f ~/.zshrc_local && source ~/.zshrc_local
 #promptinit; prompt gentoo
 
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
