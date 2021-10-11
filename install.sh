@@ -1,2 +1,2 @@
-ls -A emacs | xargs realpath | xargs -I{} ln -svf {} ~/
-ls -A zsh | xargs realpath | xargs -I{} ln -svf {} ~/
+cd emacs; ls -A | xargs realpath | xargs -I{} ln -svf {} ~/; cd -
+cd zsh; ls -A | xargs realpath | xargs -I{} ln -svf {} ~/; cd -
