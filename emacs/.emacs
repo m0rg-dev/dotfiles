@@ -1,6 +1,8 @@
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
 
+(menu-bar-mode -1)
+
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
