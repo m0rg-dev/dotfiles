@@ -114,6 +114,10 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='emacs'
 unsetopt share_history
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 test -f ~/.zshrc_local && source ~/.zshrc_local
 test -d ~/.zshrc.d && source ~/.zshrc.d/*
 
@@ -123,5 +127,3 @@ test -d ~/.zshrc.d && source ~/.zshrc.d/*
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

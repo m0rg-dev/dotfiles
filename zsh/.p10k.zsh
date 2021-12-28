@@ -876,7 +876,7 @@
   ##############[ taskwarrior: taskwarrior task count (https://taskwarrior.org/) ]##############
   # Taskwarrior color.
   typeset -g POWERLEVEL9K_TASKWARRIOR_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TASKWARRIOR_BACKGROUND=6
+  typeset -g POWERLEVEL9K_TASKWARRIOR_BACKGROUND=5
 
   # Taskwarrior segment format. The following parameters are available within the expansion.
   #
@@ -892,7 +892,7 @@
   # typeset -g POWERLEVEL9K_TASKWARRIOR_CONTENT_EXPANSION='$P9K_TASKWARRIOR_PENDING_COUNT'
 
   # Custom icon.
-  # typeset -g POWERLEVEL9K_TASKWARRIOR_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_TASKWARRIOR_VISUAL_IDENTIFIER_EXPANSION=''
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
