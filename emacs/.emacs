@@ -28,6 +28,7 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
  '(package-selected-packages
    '(terraform-mode go-mode nasm-mode markdown-mode yafolding org-plus-contrib slack dockerfile-mode docker-compose-mode yaml-mode powerline))
  '(powerline-display-hud nil)
@@ -93,3 +94,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 (setq mac-command-key-is-meta nil)
 (setq mac-command-modifier nil)
 (setq mac-option-modifier 'meta)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
