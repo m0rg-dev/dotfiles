@@ -10,8 +10,12 @@ function _ensure_gentoo {
 }
 
 function set_flag {
-    local package=${1?"Usage: set_flag <package> <flag>"}
-    local flag=${2?"Usage: set_flag <package> <flag>"}
+    local package=${1?"Usage: set_flag <package> <flag> [for-package]"}
+    local flag=${2?"Usage: set_flag <package> <flag> [for-package]"}
+    local for_package=${3:-$package}
+    local namespace=${4:-use}
+
+    local file=/etc/portage/package."$namespace"/"$for_package"
 
     local current_state="default" desired_state
     case $flag in
@@ -24,27 +28,31 @@ function set_flag {
         *) desired_state="set";;
     esac
 
-    if [[ -e /etc/portage/package.use/"$package" ]] && egrep -q "^$package.+[^-]$flag" /etc/portage/package.use/"$package"; then
+    if [[ -e "$file" ]] && egrep -q "^$package.+[^-]$flag" "$file"; then
         current_state="set"
     fi
 
-    if [[ -e /etc/portage/package.use/"$package" ]] && egrep -q "^$package.+-$flag" /etc/portage/package.use/"$package"; then
+    if [[ -e "$file" ]] && egrep -q "^$package.+-$flag" "$file"; then
         current_state="unset"
     fi
 
     if [[ $desired_state != $current_state ]]; then
         echo "Updating: $package $flag ($current_state -> $desired_state)"
 
-        sudo mkdir -pv $(dirname /etc/portage/package.use/"$package")
-        sudo touch /etc/portage/package.use/"$package"
-        egrep -q "^$package" /etc/portage/package.use/"$package" || echo "$package" | sudo tee -a /etc/portage/package.use/"$package" >/dev/null
+        sudo mkdir -pv $(dirname "$file")
+        sudo touch "$file"
+        egrep -q "^$package" "$file" || echo "$package" | sudo tee -a "$file" >/dev/null
 
-        sudo sed -i -E "s|\s-?$flag||g" /etc/portage/package.use/"$package"
+        sudo sed -i -E "s|\s-?$flag||g" "$file"
         case $desired_state in
-            "set") sudo sed -i -E "s|$package|& $flag|" /etc/portage/package.use/"$package";;
-            "unset") sudo sed -i -E "s|$package|& -$flag|" /etc/portage/package.use/"$package";;
+            "set") sudo sed -i -E "s|$package|& $flag|" "$file";;
+            "unset") sudo sed -i -E "s|$package|& -$flag|" "$file";;
         esac
     fi
 
-    grep --color=never "$package" /etc/portage/package.use/"$package"
+    grep --color=never "$package" "$file"
+}
+
+function set_keyword {
+    set_flag "$1" "$2" "$3" accept_keywords
 }
