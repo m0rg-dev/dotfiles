@@ -95,7 +95,7 @@
     # swap                  # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    tw2             # taskwarrior task count (https://taskwarrior.org/)
     time                    # current time
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
@@ -875,8 +875,8 @@
 
   ##############[ taskwarrior: taskwarrior task count (https://taskwarrior.org/) ]##############
   # Taskwarrior color.
-  typeset -g POWERLEVEL9K_TASKWARRIOR_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TASKWARRIOR_BACKGROUND=5
+  typeset -g POWERLEVEL9K_TW2_FOREGROUND=0
+  typeset -g POWERLEVEL9K_TW2_BACKGROUND=5
 
   # Taskwarrior segment format. The following parameters are available within the expansion.
   #
@@ -892,7 +892,7 @@
   # typeset -g POWERLEVEL9K_TASKWARRIOR_CONTENT_EXPANSION='$P9K_TASKWARRIOR_PENDING_COUNT'
 
   # Custom icon.
-  typeset -g POWERLEVEL9K_TASKWARRIOR_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_TW2_VISUAL_IDENTIFIER_EXPANSION=''
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.

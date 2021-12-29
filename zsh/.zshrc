@@ -119,7 +119,7 @@ unsetopt share_history
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -f ~/.zshrc_local && source ~/.zshrc_local
-test -d ~/.zshrc.d && source ~/.zshrc.d/*
+for f in ~/.zshrc.d/*; do source "$f"; done
 
 #autoload -U compinit promptinit
 #compinit
