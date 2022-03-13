@@ -1,2 +1,8 @@
 emacs/.emacs.d/auto-save-list
+emacs/.emacs.d/elpa
+emacs/.emacs.d/.last-package-update-day
+emacs/.emacs.d/.cache
+emacs/.emacs.d/.lsp-session-v1
+emacs/.emacs.d/projectile*
 *~
+.stignore
