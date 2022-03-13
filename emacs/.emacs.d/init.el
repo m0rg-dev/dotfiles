@@ -108,6 +108,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(custom-variable-tag ((t (:foreground "blue" :weight bold))))
  '(error ((t (:foreground "Red1" :slant italic))))
  '(font-lock-builtin-face ((t (:foreground "brightmagenta" :slant italic))))
+ '(font-lock-comment-face ((t (:foreground "red" :slant italic))))
  '(font-lock-constant-face ((t (:foreground "cyan"))))
  '(font-lock-function-name-face ((t (:foreground "blue"))))
  '(font-lock-keyword-face ((t (:foreground "brightred"))))
