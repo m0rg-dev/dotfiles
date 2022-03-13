@@ -80,19 +80,21 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (global-set-key (kbd "<mouse-4>") 'mouse-scroll-down)
   (global-set-key (kbd "<mouse-5>") 'mouse-scroll-up))
 
-(global-set-key (kbd "C-c l d") 'lsp-ui-doc-show)
+(eval-after-load 'lsp '(define-key lsp-mode-map (kbd "d") 'lsp-ui-doc-show))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-revert-mode-text "")
  '(display-line-numbers-width-start t)
  '(inhibit-startup-screen t)
  '(lsp-keymap-prefix "C-c l")
  '(lsp-lens-enable nil)
  '(lsp-rust-analyzer-cargo-watch-command "clippy")
  '(lsp-rust-analyzer-proc-macro-enable t)
+ '(lsp-semantic-tokens-enable t)
  '(lsp-ui-sideline-enable t)
  '(package-selected-packages
    '(treemacs-projectile lsp-treemacs treemacs magit diminish projectile helm lsp-ui yasnippet rust-mode lsp-mode company flycheck dockerfile-mode yaml-mode use-package powerline auto-package-update))
@@ -120,10 +122,11 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(font-lock-type-face ((t (:foreground "green"))))
  '(font-lock-variable-name-face ((t (:foreground "yellow"))))
  '(header-line ((t (:underline t))))
- '(highlight ((t (:background "darkseagreen2"))))
+ '(highlight ((t (:background "white"))))
  '(line-number ((t (:inherit default :foreground "green"))))
  '(line-number-current-line ((t (:inherit line-number :weight bold))))
  '(lsp-face-highlight-textual ((t (:underline t))))
+ '(lsp-face-semhl-interface ((t nil)))
  '(lsp-headerline-breadcrumb-path-error-face ((t (:inherit lsp-headerline-breadcrumb-path-face :underline (:color "Red1" :style wave)))))
  '(minibuffer-prompt ((t (:foreground "blue"))))
  '(mode-line ((t (:background "brightmagenta" :foreground "white" :box (:line-width -1 :style released-button)))))
@@ -132,6 +135,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(powerline-active2 ((t (:inherit mode-line :background "brightgreen" :foreground "white"))))
  '(powerline-inactive1 ((t (:inherit powerline-active1))))
  '(powerline-inactive2 ((t (:inherit powerline-active2))))
+ '(rust-string-interpolation ((t (:inherit font-lock-builtin-face))))
  '(shadow ((t (:foreground "grey30"))))
  '(success ((t (:foreground "green" :slant italic))))
  '(tty-menu-disabled-face ((t (:background "blue" :foreground "brightblack"))))

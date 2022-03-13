@@ -5,5 +5,6 @@ emacs/.emacs.d/.cache
 emacs/.emacs.d/.lsp-session-v1
 emacs/.emacs.d/projectile*
 emacs/.emacs.d/transient
+emacs/.emacs.d/tramp
 *~
 .stignore
