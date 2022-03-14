@@ -191,6 +191,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(lsp-lens-enable nil)
  '(lsp-rust-analyzer-cargo-watch-command "clippy")
  '(lsp-rust-analyzer-proc-macro-enable t)
+ '(lsp-rust-analyzer-server-display-inlay-hints t)
  '(lsp-semantic-tokens-enable t)
  '(lsp-ui-sideline-enable t)
  '(package-selected-packages
@@ -202,6 +203,15 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(vc-annotate-background-mode nil)
  '(vterm-buffer-name-string "vterm %s")
  '(xterm-mouse-mode t))
+
+;;; DO NOT USE!
+;;; TODO auto-check and make sure this stays empty
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init)
 ;;; init.el ends here
