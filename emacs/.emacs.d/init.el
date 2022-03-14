@@ -36,17 +36,14 @@
 (use-package docker-compose-mode)
 (use-package yaml-mode)
 (use-package vterm)
-(use-package flycheck
-  :init (global-flycheck-mode))
-(use-package company
-  :init (global-company-mode))
+(use-package flycheck :config (global-flycheck-mode))
+(use-package company :config (global-company-mode))
 (use-package yasnippet :config (yas-global-mode 1))
-(use-package lsp-mode
-  :config (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
+(use-package lsp-mode :config (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 (use-package lsp-ui)
 (use-package rust-mode)
-(use-package projectile :init (projectile-mode) (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-(use-package helm :init (helm-mode))
+(use-package projectile :config (projectile-mode) (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(use-package helm :config (helm-mode))
 (use-package diminish
   :config
   (diminish 'yas-minor-mode)
@@ -89,10 +86,15 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 (defun mouse-scroll-up () "Scroll up faster." (interactive) (scroll-up 2))
 
 (unless (display-graphic-p)
-  (global-set-key (kbd "<mouse-4>") 'mouse-scroll-down)
-  (global-set-key (kbd "<mouse-5>") 'mouse-scroll-up))
+  (global-set-key (kbd "<mouse-4>") #'mouse-scroll-down)
+  (global-set-key (kbd "<mouse-5>") #'mouse-scroll-up))
 
-(eval-after-load 'lsp '(define-key lsp-mode-map (kbd "d") 'lsp-ui-doc-show))
+(eval-after-load 'lsp '(define-key lsp-mode-map (kbd "d") #'lsp-ui-doc-show))
+
+;; bind C-z to undo
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+(global-set-key (kbd "C-z") #'undo)
 
 ;;; Face customization.
 
@@ -195,7 +197,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(lsp-semantic-tokens-enable t)
  '(lsp-ui-sideline-enable t)
  '(package-selected-packages
-   '(treemacs-projectile lsp-treemacs treemacs magit diminish projectile helm lsp-ui yasnippet rust-mode lsp-mode company flycheck dockerfile-mode yaml-mode use-package powerline auto-package-update))
+   '(multi-vterm treemacs-projectile lsp-treemacs treemacs magit diminish projectile helm lsp-ui yasnippet rust-mode lsp-mode company flycheck dockerfile-mode yaml-mode use-package powerline auto-package-update))
  '(powerline-display-hud nil)
  '(powerline-gui-use-vcs-glyph t)
  '(scroll-bar-mode nil)
