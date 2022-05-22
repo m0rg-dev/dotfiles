@@ -43,7 +43,7 @@ function set_flag {
         sudo touch "$file"
         egrep -q "^$package" "$file" || echo "$package" | sudo tee -a "$file" >/dev/null
 
-        sudo sed -i -E "s|\s-?$flag||g" "$file"
+        sudo sed -i -E "/${package//\//\\/}/ s|\s-?$flag||g" "$file"
         case $desired_state in
             "set") sudo sed -i -E "s|$package|& $flag|" "$file";;
             "unset") sudo sed -i -E "s|$package|& -$flag|" "$file";;

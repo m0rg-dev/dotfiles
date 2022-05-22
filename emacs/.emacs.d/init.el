@@ -186,6 +186,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-revert-mode-text "")
+ '(checkdoc-verb-check-experimental-flag nil)
  '(display-line-numbers-width-start t)
  '(inhibit-startup-screen t)
  '(lsp-keymap-prefix "C-c l")
