@@ -142,9 +142,11 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 
 (defun color (sym) "Get SYM out of named-colors (shorthand)." (alist-get sym named-colors))
 
+(defvar font-height 160)
+
 (face-spec-set 'default `(
-			  (((background light)) (:foreground ,(color :base00) :background ,(color :base3) :family "Iosevka" :height 160))
-			  (((background dark)) (:foreground ,(color :base0) :background ,(color :base03) :family "Iosevka" :height 160))
+			  (((background light)) (:foreground ,(color :base00) :background ,(color :base3) :family "Iosevka" :height ,font-height))
+			  (((background dark)) (:foreground ,(color :base0) :background ,(color :base03) :family "Iosevka" :height ,font-height))
 			  ))
 
 (defun face (name &rest args) "Set face NAME's default face spec to ARGS across all terminal types."
