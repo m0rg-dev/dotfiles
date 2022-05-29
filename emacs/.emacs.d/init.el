@@ -53,6 +53,7 @@
 (use-package treemacs)
 (use-package treemacs-projectile)
 (use-package lsp-treemacs :config (lsp-treemacs-sync-mode 1))
+(use-package nix-mode)
 
 (winner-mode)
 (column-number-mode)
@@ -198,7 +199,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(lsp-semantic-tokens-enable t)
  '(lsp-ui-sideline-enable t)
  '(package-selected-packages
-   '(multi-vterm treemacs-projectile lsp-treemacs treemacs magit diminish projectile helm lsp-ui yasnippet rust-mode lsp-mode company flycheck dockerfile-mode yaml-mode use-package powerline auto-package-update))
+   '(nix-mode multi-vterm treemacs-projectile lsp-treemacs treemacs magit diminish projectile helm lsp-ui yasnippet rust-mode lsp-mode company flycheck dockerfile-mode yaml-mode use-package powerline auto-package-update))
  '(powerline-display-hud nil)
  '(powerline-gui-use-vcs-glyph t)
  '(scroll-bar-mode nil)

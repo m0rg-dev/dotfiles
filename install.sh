@@ -6,6 +6,7 @@ for dir in emacs zsh tmux task; do
 done
 
 mkdir -pv ~/.config && ln -s $(realpath starship.toml) ~/.config/starship.toml
+ln -s $(realpath home.nix) ~/.config/nixpkgs/home.nix
 
 rm -rf $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 cp .gitignore .stignore
