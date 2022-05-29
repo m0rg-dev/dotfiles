@@ -34,7 +34,6 @@
 (use-package dockerfile-mode)
 (use-package docker-compose-mode)
 (use-package yaml-mode)
-(use-package vterm)
 (use-package flycheck :config (global-flycheck-mode))
 (use-package company :config (global-company-mode))
 (use-package yasnippet :config (yas-global-mode 1))
