@@ -12,6 +12,8 @@
     emacs
     iosevka
     neofetch
+    rustup
+    xsane
   ];
 
   programs.firefox = {
@@ -44,7 +46,7 @@
   home.username = "morgan";
   home.homeDirectory = "/home/morgan";
 
-  home.stateVersion = "21.05";
+  home.stateVersion = "21.11";
 
   programs.home-manager.enable = true;
 }
