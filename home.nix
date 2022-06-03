@@ -9,12 +9,19 @@
 
   home.packages = with pkgs; [
     discord
-    emacs
     iosevka
     neofetch
     rustup
-    xsane
+    ncurses
   ];
+
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [
+      epkgs.use-package
+    ];
+    package = pkgs.emacs-nox;
+  };
 
   programs.firefox = {
     enable = true;
